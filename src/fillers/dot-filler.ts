@@ -11,7 +11,7 @@ export class DotFiller implements PatternFiller {
   }
 
   fillPolygons(polygonList: Point[][], o: ResolvedOptions): OpSet {
-    o = Object.assign({}, o, { hachureAngle: 0 });
+    o = Object.assign({ hachureAngle: 0 }, o);
     const lines = polygonHachureLines(polygonList, o);
     return this.dotsOnLines(lines, o);
   }
